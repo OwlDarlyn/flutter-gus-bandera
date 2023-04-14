@@ -4,6 +4,7 @@ class AppColors {
   AppColors._();
 
   static const defaultBackColor = Color(0xFFE0DFFF);
+  static const backColor1 = Color(0xFFF0F0FF);
   static const mainTextColor = Color(0xFF27273D);
   static const mainButtonTextColor = Color(0xFFFFFFFF);
   static const mainButtonColor = Color(0xFFFF6B0A);

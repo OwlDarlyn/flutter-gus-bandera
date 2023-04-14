@@ -38,22 +38,18 @@ class HomeScreen extends StatelessWidget {
                   decoration: const BoxDecoration(
                       shape: BoxShape.circle, color: AppColors.shapeColor2),
                   child: Container(
-                    alignment: Alignment.center,
-                    height: 150,
-                    decoration: const BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: AppColors.shapeColor3,
-                    ),
-                    child: Transform.scale(
-                      scale: 2,
-                      child: Image.asset('assets/images/group_1932.png'
-                          // decoration: const BoxDecoration(
-                          //     image: DecorationImage(
-                          //   image: AssetImage('assets/images/group_1932.png'),
-                          // )),
-                          ),
-                    ),
-                  ),
+                      alignment: Alignment.center,
+                      height: 150,
+                      decoration: const BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: AppColors.shapeColor3,
+                      ),
+                      child: Transform.scale(
+                        scale: 2,
+                        child: SvgPicture.asset(
+                          'assets/images/gus1.svg',
+                        ),
+                      )),
                 ),
               ),
               Container(
