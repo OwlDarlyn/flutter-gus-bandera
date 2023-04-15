@@ -4,14 +4,15 @@ import '../models/app_colors.dart';
 
 class GusButton extends StatelessWidget {
   final String buttonTextGus;
-  const GusButton({super.key, required this.buttonTextGus});
+  final Function onTap;
+  GusButton({super.key, required this.buttonTextGus, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(top: 30, bottom: 10),
       child: TextButton(
-        onPressed: () {},
+        onPressed: () => onTap(),
         style: ButtonStyle(
             shape: MaterialStateProperty.all(RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20))),

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gus_bandera/provider/choose_location_provider.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 
 import '../models/app_colors.dart';
+import '../provider/choose_location_provider.dart';
 
 class PositionTo extends StatelessWidget {
   final String location;

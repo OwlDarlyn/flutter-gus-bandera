@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSwatch().copyWith(primary: Colors.black),
       ),
-      home: const ChooseScreen(),
+      home: const HomeScreen(),
     );
   }
 }

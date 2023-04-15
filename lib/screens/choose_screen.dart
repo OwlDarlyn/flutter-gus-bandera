@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gus_bandera/widget/gus_button_widget.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_gus_bandera/screens/home_screen.dart';
+import 'package:flutter_gus_bandera/screens/slava_ukraine_screen.dart';
 
 import '../models/app_colors.dart';
 import '../widget/position_widget.dart';
+import '../widget/gus_button_widget.dart';
 
 class ChooseScreen extends StatelessWidget {
   const ChooseScreen({super.key});
+
+  void goToSlava(BuildContext context) {
+    Navigator.push(context,
+        MaterialPageRoute(builder: (context) => const SlavaUkraineScreen()));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +30,6 @@ class ChooseScreen extends StatelessWidget {
           margin:
               const EdgeInsets.only(top: 30, left: 20, right: 20, bottom: 30),
           child: Column(
-            // mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Container(
                 margin: const EdgeInsets.only(top: 5, right: 5),
@@ -34,7 +39,10 @@ class ChooseScreen extends StatelessWidget {
                     Icons.close,
                     size: 30,
                   ),
-                  onPressed: () {},
+                  onPressed: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const HomeScreen()),
+                  ),
                 ),
               ),
               Container(
@@ -79,7 +87,12 @@ class ChooseScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              const GusButton(buttonTextGus: 'Launch the goose'),
+              const SizedBox(height: 10),
+              GusButton(
+                buttonTextGus: 'Launch the goose',
+                onTap: () => goToSlava(context),
+              ),
+              const SizedBox(height: 10),
             ],
           ),
         ),

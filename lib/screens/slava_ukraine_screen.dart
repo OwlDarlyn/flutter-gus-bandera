@@ -2,9 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../models/app_colors.dart';
+import '../screens/home_screen.dart';
+import '../screens/map_gus_screen.dart';
+import '../widget/gus_button_widget.dart';
 
-class SlavaUkraine extends StatelessWidget {
-  const SlavaUkraine({super.key});
+class SlavaUkraineScreen extends StatelessWidget {
+  const SlavaUkraineScreen({super.key});
+
+  void goToMap(BuildContext context) {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => const MapGusScreen()));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +39,10 @@ class SlavaUkraine extends StatelessWidget {
                     Icons.close,
                     size: 30,
                   ),
-                  onPressed: () {},
+                  onPressed: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const HomeScreen()),
+                  ),
                 ),
               ),
               Container(
@@ -60,7 +71,23 @@ class SlavaUkraine extends StatelessWidget {
                   scale: 1,
                   child: SvgPicture.asset('assets/images/mackwa_gus.svg'),
                 ),
-              )
+              ),
+              Container(
+                margin: const EdgeInsets.only(top: 25, left: 35, right: 35),
+                alignment: Alignment.center,
+                child: const Text(
+                  'Expect a high-profile "tra-ta-ta" on the position in the near future',
+                  style:
+                      TextStyle(color: AppColors.mainTextColor, fontSize: 16),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+              const SizedBox(height: 20),
+              GusButton(
+                buttonTextGus: 'View the map',
+                onTap: () => goToMap(context),
+              ),
+              const SizedBox(height: 10),
             ],
           ),
         ),
