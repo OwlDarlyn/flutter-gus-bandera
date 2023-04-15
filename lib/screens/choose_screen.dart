@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gus_bandera/widget/gus_button_widget.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../models/app_colors.dart';
@@ -63,47 +64,22 @@ class ChooseScreen extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: const [
-                        PositionTo(
-                            pathToIcon: 'assets/images/mackwa_invisible.svg',
-                            location: 'To the Matzkva'),
-                        PositionTo(
-                            pathToIcon: 'assets/images/chrik_invisible.svg',
-                            location: 'To the chick-chrick'),
+                        PositionTo(id: 'mackwa', location: 'To the Matzkva'),
+                        PositionTo(id: 'chrik', location: 'To the chik-chrik'),
                       ],
                     ),
                     const SizedBox(height: 10),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: const [
-                        PositionTo(
-                            pathToIcon: 'assets/images/bunker_invisible.svg',
-                            location: 'To the bunker'),
-                        PositionTo(
-                            pathToIcon: 'assets/images/rubl_invisible.svg',
-                            location: 'To the ruble rate'),
+                        PositionTo(id: 'bunker', location: 'To the bunker'),
+                        PositionTo(id: 'rubl', location: 'To the ruble rate'),
                       ],
                     ),
                   ],
                 ),
               ),
-              Container(
-                  margin: const EdgeInsets.only(top: 30, bottom: 10),
-                  child: TextButton(
-                      onPressed: () {},
-                      style: ButtonStyle(
-                          shape: MaterialStateProperty.all(
-                              RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20))),
-                          fixedSize:
-                              MaterialStateProperty.all(const Size(300, 50)),
-                          backgroundColor: MaterialStateProperty.all(
-                              AppColors.mainButtonColor),
-                          foregroundColor: MaterialStateProperty.all(
-                              AppColors.mainButtonTextColor)),
-                      child: const Text(
-                        'Launch the goose',
-                        style: TextStyle(fontSize: 20),
-                      ))),
+              const GusButton(buttonTextGus: 'Launch the goose'),
             ],
           ),
         ),
