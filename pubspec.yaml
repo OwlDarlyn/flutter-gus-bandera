@@ -60,10 +60,15 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/images/group_1932.png
-    - assets/images/gus.png
-    - assets/images/gus.svg
+    - assets/images/bunker.svg
+    - assets/images/bunker1.svg
+    - assets/images/chrik.svg
+    - assets/images/chrik1.svg
     - assets/images/gus1.svg
+    - assets/images/mackwa.svg
+    - assets/images/mackwa1.svg
+    - assets/images/rubl.svg
+    - assets/images/rubl1.svg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

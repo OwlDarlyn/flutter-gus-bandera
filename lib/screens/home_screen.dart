@@ -59,7 +59,7 @@ class HomeScreen extends StatelessWidget {
                   style: ButtonStyle(
                       shape: MaterialStateProperty.all(RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20))),
-                      fixedSize: MaterialStateProperty.all(const Size(315, 55)),
+                      fixedSize: MaterialStateProperty.all(const Size(300, 50)),
                       backgroundColor:
                           MaterialStateProperty.all(AppColors.mainButtonColor),
                       foregroundColor: MaterialStateProperty.all(
