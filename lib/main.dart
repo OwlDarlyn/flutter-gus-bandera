@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../screens/slava_ukraine_screen.dart';
 import '../screens/home_screen.dart';
 import '../screens/choose_screen.dart';
 

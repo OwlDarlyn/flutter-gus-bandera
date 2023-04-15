@@ -60,15 +60,19 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/images/bunker.svg
-    - assets/images/bunker1.svg
-    - assets/images/chrik.svg
-    - assets/images/chrik1.svg
-    - assets/images/gus1.svg
-    - assets/images/mackwa.svg
-    - assets/images/mackwa1.svg
-    - assets/images/rubl.svg
-    - assets/images/rubl1.svg
+    - assets/images/bunker_gus.svg
+    - assets/images/bunker_invisible.svg
+    - assets/images/bunker_visible.svg
+    - assets/images/chrik_gus.svg
+    - assets/images/chrik_invisible.svg
+    - assets/images/chrik_visible.svg
+    - assets/images/gus_main.svg
+    - assets/images/mackwa_gus.svg
+    - assets/images/mackwa_invisible.svg
+    - assets/images/mackwa_visible.svg
+    - assets/images/rubl_gus.svg
+    - assets/images/rubl_invisible.svg
+    - assets/images/rubl_visible.svg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../models/app_colors.dart';
+import '../widget/position_widget.dart';
 
 class ChooseScreen extends StatelessWidget {
   const ChooseScreen({super.key});
@@ -56,42 +57,37 @@ class ChooseScreen extends StatelessWidget {
                 ),
               ),
               Container(
-                margin: const EdgeInsets.only(top: 40, left: 15, right: 15),
-                child: Row(
+                margin: const EdgeInsets.only(top: 30, left: 20, right: 20),
+                child: Column(
                   children: [
-                    Container(
-                      padding: const EdgeInsets.only(bottom: 15, top: 15),
-                      height: 205,
-                      width: 150,
-                      alignment: Alignment.bottomCenter,
-                      decoration: BoxDecoration(
-                          color: AppColors.backColor2,
-                          borderRadius: BorderRadius.circular(16)),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Transform.scale(
-                            scale: 1,
-                            child:
-                                SvgPicture.asset('assets/images/mackwa1.svg'),
-                          ),
-                          const Text(
-                            textAlign: TextAlign.center,
-                            'To the Matzkva',
-                            style: TextStyle(
-                              color: AppColors.mainTextColor,
-                              fontSize: 16,
-                            ),
-                          ),
-                        ],
-                      ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: const [
+                        PositionTo(
+                            pathToIcon: 'assets/images/mackwa_invisible.svg',
+                            location: 'To the Matzkva'),
+                        PositionTo(
+                            pathToIcon: 'assets/images/chrik_invisible.svg',
+                            location: 'To the chick-chrick'),
+                      ],
                     ),
-                    Container(),
+                    const SizedBox(height: 10),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: const [
+                        PositionTo(
+                            pathToIcon: 'assets/images/bunker_invisible.svg',
+                            location: 'To the bunker'),
+                        PositionTo(
+                            pathToIcon: 'assets/images/rubl_invisible.svg',
+                            location: 'To the ruble rate'),
+                      ],
+                    ),
                   ],
                 ),
               ),
               Container(
-                  margin: const EdgeInsets.only(top: 200, bottom: 10),
+                  margin: const EdgeInsets.only(top: 30, bottom: 10),
                   child: TextButton(
                       onPressed: () {},
                       style: ButtonStyle(
