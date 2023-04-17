@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../models/app_colors.dart';
@@ -7,7 +8,8 @@ import '../screens/map_gus_screen.dart';
 import '../widget/gus_button_widget.dart';
 
 class SlavaUkraineScreen extends StatelessWidget {
-  const SlavaUkraineScreen({super.key});
+  final String actionId;
+  const SlavaUkraineScreen({super.key, required this.actionId});
 
   void goToMap(BuildContext context) {
     Navigator.push(
@@ -21,8 +23,6 @@ class SlavaUkraineScreen extends StatelessWidget {
       body: SafeArea(
         child: Container(
           alignment: Alignment.center,
-          width: 350,
-          height: 700,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16),
             color: AppColors.backColor1,
@@ -30,6 +30,7 @@ class SlavaUkraineScreen extends StatelessWidget {
           margin:
               const EdgeInsets.only(top: 30, left: 20, right: 20, bottom: 30),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Container(
                 margin: const EdgeInsets.only(top: 5, right: 5),
@@ -69,7 +70,7 @@ class SlavaUkraineScreen extends StatelessWidget {
                 margin: const EdgeInsets.only(top: 50),
                 child: Transform.scale(
                   scale: 1,
-                  child: SvgPicture.asset('assets/images/mackwa_gus.svg'),
+                  child: SvgPicture.asset('assets/images/${actionId}_gus.svg'),
                 ),
               ),
               Container(
@@ -82,12 +83,14 @@ class SlavaUkraineScreen extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
               ),
-              const SizedBox(height: 20),
-              GusButton(
-                buttonTextGus: 'View the map',
-                onTap: () => goToMap(context),
+              Container(
+                alignment: Alignment.bottomCenter,
+                child: GusButton(
+                  buttonTextGus: 'View the map',
+                  onTap: () => goToMap(context),
+                ),
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: 5),
             ],
           ),
         ),

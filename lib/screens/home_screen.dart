@@ -18,10 +18,11 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.defaultBackColor,
       body: SafeArea(
-        child: Column(children: [
+        child:
+            Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
           Container(
             margin:
-                const EdgeInsets.only(top: 50, right: 30, left: 30, bottom: 5),
+                const EdgeInsets.only(top: 50, right: 30, left: 30, bottom: 30),
             alignment: Alignment.center,
             child: const Text(
               'A combat goose from Ukraine\'s biolabs is ready to launch a "super-tratatata" attack on enemy targets',
@@ -33,7 +34,7 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           Container(
-            margin: const EdgeInsets.only(top: 60, bottom: 50),
+            margin: const EdgeInsets.only(top: 50),
             alignment: Alignment.center,
             height: 350,
             decoration: const BoxDecoration(
@@ -53,17 +54,17 @@ class HomeScreen extends StatelessWidget {
                   child: Transform.scale(
                     scale: 2,
                     child: SvgPicture.asset(
-                      'assets/images/gus_main.svg',
+                      'assets/images/gus_active_eng.svg',
                     ),
                   )),
             ),
           ),
-          const SizedBox(height: 50),
+          const SizedBox(height: 55),
           GusButton(
             buttonTextGus: 'Pick a position',
             onTap: () => goToChoose(context),
           ),
-          const SizedBox(height: 10),
+          const SizedBox(height: 30),
         ]),
       ),
     );

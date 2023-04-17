@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../models/app_colors.dart';
+import '../screens/home_screen.dart';
 
 class MapGusScreen extends StatelessWidget {
   const MapGusScreen({super.key});
@@ -11,7 +12,31 @@ class MapGusScreen extends StatelessWidget {
       backgroundColor: AppColors.defaultBackColor,
       body: SafeArea(
           child: Column(
-        children: [],
+        children: [
+          Container(
+            alignment: Alignment.topCenter,
+            margin: const EdgeInsets.only(top: 30),
+            child: const Text(
+              'Map of goose launches by position',
+              style: TextStyle(
+                  color: AppColors.mainTextColor,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold),
+            ),
+          ),
+          Container(
+            alignment: Alignment.centerLeft,
+            margin: const EdgeInsets.only(top: 30, left: 30, right: 30),
+            padding:
+                const EdgeInsets.only(left: 10, right: 10, bottom: 10, top: 10),
+            height: 60,
+            width: 330,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(16),
+                color: AppColors.backColor1),
+            child: const Text('map lists'),
+          ),
+        ],
       )),
     );
   }

@@ -67,7 +67,9 @@ flutter:
     - assets/images/chrik_gus.svg
     - assets/images/chrik_invisible.svg
     - assets/images/chrik_visible.svg
-    - assets/images/gus_main.svg
+    - assets/images/gus_active_eng.svg
+    - assets/images/gus_active_ukr.svg
+    - assets/images/gus_fly.svg
     - assets/images/mackwa_gus.svg
     - assets/images/mackwa_invisible.svg
     - assets/images/mackwa_visible.svg

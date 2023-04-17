@@ -5,7 +5,12 @@ import '../models/app_colors.dart';
 class GusButton extends StatelessWidget {
   final String buttonTextGus;
   final Function onTap;
-  GusButton({super.key, required this.buttonTextGus, required this.onTap});
+  final bool? enabled;
+  const GusButton(
+      {super.key,
+      required this.buttonTextGus,
+      required this.onTap,
+      this.enabled = true});
 
   @override
   Widget build(BuildContext context) {
@@ -16,9 +21,10 @@ class GusButton extends StatelessWidget {
         style: ButtonStyle(
             shape: MaterialStateProperty.all(RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20))),
-            fixedSize: MaterialStateProperty.all(const Size(300, 50)),
-            backgroundColor:
-                MaterialStateProperty.all(AppColors.mainButtonColor),
+            fixedSize: MaterialStateProperty.all(const Size(310, 50)),
+            backgroundColor: MaterialStateProperty.all(enabled!
+                ? AppColors.enabledButtonColor
+                : AppColors.disabledButtonColor),
             foregroundColor:
                 MaterialStateProperty.all(AppColors.mainButtonTextColor)),
         child: Text(
