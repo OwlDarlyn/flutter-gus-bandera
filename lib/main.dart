@@ -7,10 +7,14 @@ import '../screens/slava_ukraine_screen.dart';
 import '../screens/home_screen.dart';
 import '../screens/choose_screen.dart';
 import '../screens/load_screen.dart';
+import '../provider/change_lang.dart';
 
 void main() {
   runApp(MultiProvider(
-    providers: [ChangeNotifierProvider(create: (_) => ChooseLocation())],
+    providers: [
+      ChangeNotifierProvider(create: (_) => ChooseLocation()),
+      ChangeNotifierProvider(create: (_) => ChooseLanguage()),
+    ],
     child: const MyApp(),
   ));
 }

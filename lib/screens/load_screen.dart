@@ -1,15 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gus_bandera/widget/lang_widget.dart';
 
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:provider/provider.dart';
 
 import '../models/app_colors.dart';
+import '../provider/change_lang.dart';
+import '../screens/home_screen.dart';
 import '../widget/gus_button_widget.dart';
 
 class LoadScreen extends StatelessWidget {
   const LoadScreen({super.key});
 
+  void goToHome(BuildContext context, String id) {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => HomeScreen()));
+  }
+
   @override
   Widget build(BuildContext context) {
+    final String langdId =
+        Provider.of<ChooseLanguage>(context, listen: true).choosenIdLang;
     return Scaffold(
       backgroundColor: AppColors.defaultBackColor,
       body: SafeArea(
@@ -56,53 +67,22 @@ class LoadScreen extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
           ),
-          Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-            Container(
-              height: 100,
-              width: 100,
-              padding: const EdgeInsets.all(5),
-              margin: const EdgeInsets.only(
-                  top: 10, left: 30, right: 30, bottom: 10),
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(16),
-                color: AppColors.backColor1,
-              ),
-              child: TextButton(
-                onPressed: () {},
-                child: Transform.scale(
-                  scale: 1,
-                  child: SvgPicture.asset(
-                    'assets/images/ua_flag_1.svg',
-                  ),
-                ),
-              ),
-            ),
-            Container(
-              height: 100,
-              width: 100,
-              padding: const EdgeInsets.all(5),
-              margin: const EdgeInsets.only(
-                  top: 10, left: 20, right: 20, bottom: 10),
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(16),
-                color: AppColors.backColor1,
-              ),
-              child: TextButton(
-                onPressed: () {},
-                child: Transform.scale(
-                  scale: 1,
-                  child: SvgPicture.asset(
-                    'assets/images/gb_flag_1.svg',
-                  ),
-                ),
-              ),
-            ),
-          ]),
+          Container(
+            margin: const EdgeInsets.only(left: 30, right: 30),
+            decoration: BoxDecoration(
+                color: AppColors.shapeColor1,
+                borderRadius: BorderRadius.circular(16)),
+            child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: const [
+                  LangTo(id: 'gb'),
+                  LangTo(id: 'ua'),
+                ]),
+          ),
           GusButton(
             buttonTextGus: 'Select a language',
-            onTap: () {},
+            onTap: () => langdId != '' ? goToHome(context, langdId) : null,
+            enabled: langdId != '',
           ),
           const SizedBox(height: 30),
         ],
