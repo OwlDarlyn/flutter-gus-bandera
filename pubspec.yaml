@@ -32,6 +32,7 @@ dependencies:
     sdk: flutter
   flutter_svg: ^2.0.5
   provider: ^6.0.5
+  country_icons: ^2.0.2
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -67,15 +68,19 @@ flutter:
     - assets/images/chrik_gus.svg
     - assets/images/chrik_invisible.svg
     - assets/images/chrik_visible.svg
+    - assets/images/gb_flag_1.svg
     - assets/images/gus_active_eng.svg
     - assets/images/gus_active_ukr.svg
     - assets/images/gus_fly.svg
+    - assets/images/gus_kus_eng.svg
+    - assets/images/gus_kus_ukr.svg
     - assets/images/mackwa_gus.svg
     - assets/images/mackwa_invisible.svg
     - assets/images/mackwa_visible.svg
     - assets/images/rubl_gus.svg
     - assets/images/rubl_invisible.svg
     - assets/images/rubl_visible.svg
+    - assets/images/ua_flag_1.svg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

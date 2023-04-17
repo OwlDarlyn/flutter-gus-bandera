@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gus_bandera/screens/choose_screen.dart';
-import 'package:flutter_gus_bandera/widget/gus_button_widget.dart';
+
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../models/app_colors.dart';
+import '../screens/choose_screen.dart';
+import '../widget/gus_button_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});

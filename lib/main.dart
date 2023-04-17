@@ -6,6 +6,7 @@ import '../provider/choose_location_provider.dart';
 import '../screens/slava_ukraine_screen.dart';
 import '../screens/home_screen.dart';
 import '../screens/choose_screen.dart';
+import '../screens/load_screen.dart';
 
 void main() {
   runApp(MultiProvider(
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSwatch().copyWith(primary: Colors.black),
       ),
-      home: const HomeScreen(),
+      home: const LoadScreen(),
     );
   }
 }
