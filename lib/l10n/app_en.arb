@@ -1,3 +1,25 @@
 {
-    "hello": "Hello, How are you!1231"
+    "@_LOAD_SCREEN": {},
+    "picture1": "assets/images/gus_kus_eng.svg",
+    "title1": "Select your language",
+    "button1": "Change your language",
+    "@_HOME_SCREEN": {},
+    "text1": "A combat goose from Ukraine's biolabs is ready to launch a \"super-tratatata\" attack on enemy targets",
+    "picture2": "assets/images/gus_active_eng.svg",
+    "button2": "Pick a position",
+    "@_CHOOSE_SCREEN": {},
+    "title2": "Choose one of four positions",
+    "text2": "The goose attacks the selected position with precision weapons",
+    "location1": "To the Matzkva",
+    "location2": "To the chik-chrik",
+    "location3": "To the bunker",
+    "location4": "To the ruble rate",
+    "button3": "Launch the goose",
+    "@_SLAVA_SCREEN": {},
+    "title3": "Glory to Ukraine!",
+    "text3": "Your goose has been successfully launched",
+    "text4": "Expect a high-profile \"tra-ta-ta\" on the position in the near future",
+    "button4": "View the map",
+    "@_MAP_SCREEN": {},
+    "title4": "Map of goose launches by position"
  }

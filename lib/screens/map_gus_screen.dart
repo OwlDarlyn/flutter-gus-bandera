@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 import '../models/app_colors.dart';
 import '../screens/home_screen.dart';
 
@@ -16,9 +18,9 @@ class MapGusScreen extends StatelessWidget {
           Container(
             alignment: Alignment.topCenter,
             margin: const EdgeInsets.only(top: 30),
-            child: const Text(
-              'Map of goose launches by position',
-              style: TextStyle(
+            child: Text(
+              AppLocalizations.of(context)!.title4,
+              style: const TextStyle(
                   color: AppColors.mainTextColor,
                   fontSize: 20,
                   fontWeight: FontWeight.bold),

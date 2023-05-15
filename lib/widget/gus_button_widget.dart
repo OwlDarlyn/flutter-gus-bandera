@@ -20,7 +20,7 @@ class GusButton extends StatelessWidget {
         onPressed: () => onTap(),
         style: ButtonStyle(
             shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20))),
+                borderRadius: BorderRadius.circular(16))),
             fixedSize: MaterialStateProperty.all(const Size(310, 50)),
             backgroundColor: MaterialStateProperty.all(enabled!
                 ? AppColors.enabledButtonColor

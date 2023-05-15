@@ -50,7 +50,7 @@ class LoadScreen extends StatelessWidget {
                   child: Transform.scale(
                     scale: 2,
                     child: SvgPicture.asset(
-                      'assets/images/gus_kus_eng.svg',
+                      AppLocalizations.of(context)!.picture1,
                     ),
                   )),
             ),
@@ -59,9 +59,9 @@ class LoadScreen extends StatelessWidget {
             margin:
                 const EdgeInsets.only(top: 20, right: 30, left: 30, bottom: 10),
             alignment: Alignment.center,
-            child: const Text(
-              'Select your language',
-              style: TextStyle(
+            child: Text(
+              AppLocalizations.of(context)!.title1,
+              style: const TextStyle(
                 color: AppColors.mainTextColor,
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
@@ -70,7 +70,7 @@ class LoadScreen extends StatelessWidget {
             ),
           ),
           Container(
-            margin: const EdgeInsets.only(left: 30, right: 30),
+            margin: const EdgeInsets.only(left: 40, right: 40),
             decoration: BoxDecoration(
                 color: AppColors.shapeColor1,
                 borderRadius: BorderRadius.circular(16)),
@@ -82,7 +82,7 @@ class LoadScreen extends StatelessWidget {
                 ]),
           ),
           GusButton(
-            buttonTextGus: AppLocalizations.of(context)!.hello,
+            buttonTextGus: AppLocalizations.of(context)!.button1,
             onTap: () => langdId != '' ? goToHome(context, langdId) : null,
             enabled: langdId != '',
           ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../models/app_colors.dart';
 import '../screens/home_screen.dart';
@@ -48,9 +49,9 @@ class SlavaUkraineScreen extends StatelessWidget {
               ),
               Container(
                 margin: const EdgeInsets.only(top: 5),
-                child: const Text(
-                  'Slava Ukraine!',
-                  style: TextStyle(
+                child: Text(
+                  AppLocalizations.of(context)!.title3,
+                  style: const TextStyle(
                       color: AppColors.mainTextColor,
                       fontSize: 20,
                       fontWeight: FontWeight.bold),
@@ -59,10 +60,10 @@ class SlavaUkraineScreen extends StatelessWidget {
               Container(
                 margin: const EdgeInsets.only(top: 20, left: 35, right: 35),
                 alignment: Alignment.center,
-                child: const Text(
-                  'Your goose has been successfully launched',
-                  style:
-                      TextStyle(color: AppColors.mainTextColor, fontSize: 16),
+                child: Text(
+                  AppLocalizations.of(context)!.text3,
+                  style: const TextStyle(
+                      color: AppColors.mainTextColor, fontSize: 16),
                   textAlign: TextAlign.center,
                 ),
               ),
@@ -76,17 +77,17 @@ class SlavaUkraineScreen extends StatelessWidget {
               Container(
                 margin: const EdgeInsets.only(top: 25, left: 35, right: 35),
                 alignment: Alignment.center,
-                child: const Text(
-                  'Expect a high-profile "tra-ta-ta" on the position in the near future',
-                  style:
-                      TextStyle(color: AppColors.mainTextColor, fontSize: 16),
+                child: Text(
+                  AppLocalizations.of(context)!.text4,
+                  style: const TextStyle(
+                      color: AppColors.mainTextColor, fontSize: 16),
                   textAlign: TextAlign.center,
                 ),
               ),
               Container(
                 alignment: Alignment.bottomCenter,
                 child: GusButton(
-                  buttonTextGus: 'View the map',
+                  buttonTextGus: AppLocalizations.of(context)!.button4,
                   onTap: () => goToMap(context),
                 ),
               ),

@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../models/app_colors.dart';
 import '../provider/choose_location_provider.dart';
@@ -72,9 +73,9 @@ class _ChooseScreenState extends State<ChooseScreen> {
                 ),
                 Container(
                   margin: const EdgeInsets.only(top: 5),
-                  child: const Text(
-                    'Choose one of four positions',
-                    style: TextStyle(
+                  child: Text(
+                    AppLocalizations.of(context)!.title2,
+                    style: const TextStyle(
                         color: AppColors.mainTextColor,
                         fontSize: 20,
                         fontWeight: FontWeight.bold),
@@ -83,10 +84,10 @@ class _ChooseScreenState extends State<ChooseScreen> {
                 Container(
                   margin: const EdgeInsets.only(top: 20, left: 35, right: 35),
                   alignment: Alignment.center,
-                  child: const Text(
-                    'The goose attacks the selected position with precision weapons',
-                    style:
-                        TextStyle(color: AppColors.mainTextColor, fontSize: 16),
+                  child: Text(
+                    AppLocalizations.of(context)!.text2,
+                    style: const TextStyle(
+                        color: AppColors.mainTextColor, fontSize: 16),
                     textAlign: TextAlign.center,
                   ),
                 ),
@@ -96,25 +97,36 @@ class _ChooseScreenState extends State<ChooseScreen> {
                     children: [
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: const [
-                          PositionTo(id: 'mackwa', location: 'To the Matzkva'),
+                        children: [
                           PositionTo(
-                              id: 'chrik', location: 'To the chik-chrik'),
+                              id: 'mackwa',
+                              location:
+                                  AppLocalizations.of(context)!.location1),
+                          PositionTo(
+                              id: 'chrik',
+                              location:
+                                  AppLocalizations.of(context)!.location2),
                         ],
                       ),
                       const SizedBox(height: 10),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: const [
-                          PositionTo(id: 'bunker', location: 'To the bunker'),
-                          PositionTo(id: 'rubl', location: 'To the ruble rate'),
+                        children: [
+                          PositionTo(
+                              id: 'bunker',
+                              location:
+                                  AppLocalizations.of(context)!.location3),
+                          PositionTo(
+                              id: 'rubl',
+                              location:
+                                  AppLocalizations.of(context)!.location4),
                         ],
                       ),
                     ],
                   ),
                 ),
                 GusButton(
-                  buttonTextGus: 'Launch the goose',
+                  buttonTextGus: AppLocalizations.of(context)!.button3,
                   onTap: () => selectedId != '' ? launchGoose() : null,
                   enabled: selectedId != '',
                 ),

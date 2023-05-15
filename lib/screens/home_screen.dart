@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../models/app_colors.dart';
 import '../screens/choose_screen.dart';
@@ -25,9 +26,9 @@ class HomeScreen extends StatelessWidget {
             margin:
                 const EdgeInsets.only(top: 50, right: 30, left: 30, bottom: 30),
             alignment: Alignment.center,
-            child: const Text(
-              'A combat goose from Ukraine\'s biolabs is ready to launch a "super-tratatata" attack on enemy targets',
-              style: TextStyle(
+            child: Text(
+              AppLocalizations.of(context)!.text1,
+              style: const TextStyle(
                 color: AppColors.mainTextColor,
                 fontSize: 18,
               ),
@@ -55,14 +56,14 @@ class HomeScreen extends StatelessWidget {
                   child: Transform.scale(
                     scale: 2,
                     child: SvgPicture.asset(
-                      'assets/images/gus_active_eng.svg',
+                      AppLocalizations.of(context)!.picture2,
                     ),
                   )),
             ),
           ),
           const SizedBox(height: 55),
           GusButton(
-            buttonTextGus: 'Pick a position',
+            buttonTextGus: AppLocalizations.of(context)!.button2,
             onTap: () => goToChoose(context),
           ),
           const SizedBox(height: 30),
