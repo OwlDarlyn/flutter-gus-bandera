@@ -3,14 +3,16 @@ import 'package:flutter_gus_bandera/widget/lang_widget.dart';
 
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../models/app_colors.dart';
-import '../provider/change_lang.dart';
+import '../provider/choose_lang_provider.dart';
 import '../screens/home_screen.dart';
 import '../widget/gus_button_widget.dart';
 
 class LoadScreen extends StatelessWidget {
-  const LoadScreen({super.key});
+  final void onLocaleChange;
+  const LoadScreen({super.key, this.onLocaleChange});
 
   void goToHome(BuildContext context, String id) {
     Navigator.push(
@@ -75,12 +77,12 @@ class LoadScreen extends StatelessWidget {
             child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: const [
-                  LangTo(id: 'gb'),
-                  LangTo(id: 'ua'),
+                  LangTo(id: 'en'),
+                  LangTo(id: 'uk'),
                 ]),
           ),
           GusButton(
-            buttonTextGus: 'Select a language',
+            buttonTextGus: AppLocalizations.of(context)!.hello,
             onTap: () => langdId != '' ? goToHome(context, langdId) : null,
             enabled: langdId != '',
           ),
