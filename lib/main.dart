@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'data/database_helper.dart';
 
 import '../provider/choose_location_provider.dart';
 import '../provider/choose_lang_provider.dart';
@@ -13,6 +14,8 @@ import '../screens/choose_screen.dart';
 import '../screens/load_screen.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+
   runApp(MultiProvider(
     providers: [
       ChangeNotifierProvider(create: (_) => ChooseLocation()),

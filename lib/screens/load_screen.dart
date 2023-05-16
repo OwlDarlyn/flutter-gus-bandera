@@ -81,14 +81,22 @@ class LoadScreen extends StatelessWidget {
                   LangTo(id: 'uk'),
                 ]),
           ),
-          GusButton(
-            buttonTextGus: AppLocalizations.of(context)!.button1,
-            onTap: () => langdId != '' ? goToHome(context, langdId) : null,
-            enabled: langdId != '',
-          ),
-          const SizedBox(height: 30),
+          // GusButton(
+          //   buttonTextGus: AppLocalizations.of(context)!.button1,
+          //   onTap: () => langdId != '' ? goToHome(context, langdId) : null,
+          //   enabled: langdId != '',
+          // ),
+          // const SizedBox(height: 30),
         ],
       )),
+      bottomNavigationBar: Padding(
+        padding: EdgeInsets.only(bottom: 80, left: 30, right: 30),
+        child: GusButton(
+          buttonTextGus: AppLocalizations.of(context)!.button1,
+          onTap: () => langdId != '' ? goToHome(context, langdId) : null,
+          enabled: langdId != '',
+        ),
+      ),
     );
   }
 }

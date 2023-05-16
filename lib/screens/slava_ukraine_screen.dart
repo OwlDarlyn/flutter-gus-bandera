@@ -68,14 +68,14 @@ class SlavaUkraineScreen extends StatelessWidget {
                 ),
               ),
               Container(
-                margin: const EdgeInsets.only(top: 50),
+                margin: const EdgeInsets.only(top: 30),
                 child: Transform.scale(
                   scale: 1,
                   child: SvgPicture.asset('assets/images/${actionId}_gus.svg'),
                 ),
               ),
               Container(
-                margin: const EdgeInsets.only(top: 25, left: 35, right: 35),
+                margin: const EdgeInsets.only(top: 50, left: 35, right: 35),
                 alignment: Alignment.center,
                 child: Text(
                   AppLocalizations.of(context)!.text4,

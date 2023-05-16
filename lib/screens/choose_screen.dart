@@ -2,6 +2,8 @@ import 'dart:developer';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_gus_bandera/data/database_helper.dart';
+import 'package:flutter_gus_bandera/models/goose_map.dart';
 
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
@@ -140,7 +142,10 @@ class _ChooseScreenState extends State<ChooseScreen> {
         bottom: selectedGus ? 1200 : -550,
         left: 15,
         duration: const Duration(milliseconds: 1200),
-        onEnd: () => goToSlava(context, selectedId),
+        onEnd: () async {
+          await DatabaseHelper.instance.add(GusMap(id: 1, title: 'hello'));
+          goToSlava(context, selectedId);
+        },
         child: Transform.scale(
             scale: 1, child: SvgPicture.asset('assets/images/gus_fly.svg')),
       )

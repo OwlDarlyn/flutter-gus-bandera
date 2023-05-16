@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_gus_bandera/data/database_helper.dart';
+import 'package:flutter_gus_bandera/models/goose_map.dart';
 
 import '../models/app_colors.dart';
 import '../screens/home_screen.dart';
@@ -36,7 +38,27 @@ class MapGusScreen extends StatelessWidget {
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(16),
                 color: AppColors.backColor1),
-            child: const Text('map lists'),
+            child: FutureBuilder<List<GusMap>>(
+                future: DatabaseHelper.instance.getGusMap(),
+                builder: (BuildContext context,
+                    AsyncSnapshot<List<GusMap>> snapshot) {
+                  if (!snapshot.hasData) {
+                    return const Center(child: Text('Loading...'));
+                  }
+                  return snapshot.data!.isEmpty
+                      ? const Center(child: Text('No launches yet.'))
+                      : ListView(
+                          children: snapshot.data!.map((gusMap) {
+                            return Center(
+                              child: ListTile(
+                                title: Text(gusMap.title),
+                              ),
+                            );
+                          }).toList(),
+                        );
+                }),
+
+            // const Text('map lists'),
           ),
         ],
       )),
