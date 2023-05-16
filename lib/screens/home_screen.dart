@@ -24,7 +24,7 @@ class HomeScreen extends StatelessWidget {
             Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
           Container(
             margin:
-                const EdgeInsets.only(top: 50, right: 30, left: 30, bottom: 30),
+                const EdgeInsets.only(top: 70, right: 30, left: 30, bottom: 30),
             alignment: Alignment.center,
             child: Text(
               AppLocalizations.of(context)!.text1,
@@ -36,7 +36,7 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           Container(
-            margin: const EdgeInsets.only(top: 50),
+            margin: const EdgeInsets.only(top: 30),
             alignment: Alignment.center,
             height: 350,
             decoration: const BoxDecoration(
@@ -62,12 +62,19 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 55),
-          GusButton(
-            buttonTextGus: AppLocalizations.of(context)!.button2,
-            onTap: () => goToChoose(context),
-          ),
-          const SizedBox(height: 30),
+          // GusButton(
+          //   buttonTextGus: AppLocalizations.of(context)!.button2,
+          //   onTap: () => goToChoose(context),
+          // ),
+          // const SizedBox(height: 30),
         ]),
+      ),
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.only(bottom: 80, left: 30, right: 30),
+        child: GusButton(
+          buttonTextGus: AppLocalizations.of(context)!.button2,
+          onTap: () => goToChoose(context),
+        ),
       ),
     );
   }

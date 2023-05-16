@@ -21,5 +21,6 @@
     "text4": "Expect a high-profile \"tra-ta-ta\" on the position in the near future",
     "button4": "View the map",
     "@_MAP_SCREEN": {},
-    "title4": "Map of goose launches by position"
+    "title4": "Map of goose launches by position",
+    "button5": "Pick a new position"
  }

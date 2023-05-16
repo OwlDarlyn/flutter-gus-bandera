@@ -16,7 +16,7 @@ class LoadScreen extends StatelessWidget {
 
   void goToHome(BuildContext context, String id) {
     Navigator.push(
-        context, MaterialPageRoute(builder: (context) => HomeScreen()));
+        context, MaterialPageRoute(builder: (context) => const HomeScreen()));
   }
 
   @override
@@ -90,7 +90,7 @@ class LoadScreen extends StatelessWidget {
         ],
       )),
       bottomNavigationBar: Padding(
-        padding: EdgeInsets.only(bottom: 80, left: 30, right: 30),
+        padding: const EdgeInsets.only(bottom: 80, left: 30, right: 30),
         child: GusButton(
           buttonTextGus: AppLocalizations.of(context)!.button1,
           onTap: () => langdId != '' ? goToHome(context, langdId) : null,
