@@ -1,16 +1,33 @@
 # flutter_gus_bandera
 
-A new Flutter project.
+A new Flutter project. Design of a mobile application for launching a banderogus.
 
-## Getting Started
+The design was taken from the [GoIT UI/UX marathon.](https://uxuidesign.m.goit.global/ua/start/) 
+All rights to the design belong to the GoIT.
 
-This project is a starting point for a Flutter application.
+## Packages used
 
-A few resources to get you started if this is your first Flutter project:
+* flutter_svg v2.0.5
+* provider v6.0.5
+* country_icons v2.0.2
+* flutter_localizations
+* intl v0.17.0
+* sqflite v2.2.8+2
+* path_provider v2.0.15
+* path v1.8.2
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## App's screens
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### EN version
+![](load_screen_en.png)
+![](home_screen_en.png)
+![](choose_screen_en.png)
+![](slava_screen_en.png)
+![](map_screen_en.png)
+
+### UA version
+![](load_screen_ua.png)
+![](home_screen_ua.png)
+![](choose_screen_ua.png)
+![](slava_screen_ua.png)
+![](map_screen_ua.png)
