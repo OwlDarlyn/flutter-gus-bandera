@@ -5,6 +5,7 @@ import 'package:flutter_gus_bandera/data/database_helper.dart';
 import 'package:flutter_gus_bandera/models/goose_map.dart';
 import 'package:flutter_gus_bandera/screens/choose_screen.dart';
 import 'package:flutter_gus_bandera/widget/gus_button_widget.dart';
+import 'package:flutter_gus_bandera/widget/gus_list_item.dart';
 
 import '../models/app_colors.dart';
 import '../screens/home_screen.dart';
@@ -26,7 +27,7 @@ class MapGusScreen extends StatelessWidget {
           children: [
             Container(
               alignment: Alignment.topCenter,
-              margin: const EdgeInsets.only(top: 30),
+              margin: const EdgeInsets.only(top: 30, bottom: 20),
               child: Text(
                 AppLocalizations.of(context)!.title4,
                 style: const TextStyle(
@@ -35,16 +36,7 @@ class MapGusScreen extends StatelessWidget {
                     fontWeight: FontWeight.bold),
               ),
             ),
-            Container(
-              alignment: Alignment.centerLeft,
-              margin: const EdgeInsets.only(top: 30, left: 30, right: 30),
-              padding: const EdgeInsets.only(
-                  left: 10, right: 10, bottom: 10, top: 10),
-              height: 60,
-              width: 330,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(16),
-                  color: AppColors.backColor1),
+            Expanded(
               child: FutureBuilder<List<GusMap>>(
                   future: DatabaseHelper.instance.getGusMap(),
                   builder: (BuildContext context,
@@ -52,24 +44,21 @@ class MapGusScreen extends StatelessWidget {
                     if (!snapshot.hasData) {
                       return const Center(child: Text('Loading...'));
                     }
-                    return snapshot.data!.isEmpty
-                        ? const Center(child: Text('No launches yet.'))
-                        : ListView(
-                            children: snapshot.data!.map((gusMap) {
-                              return Center(
-                                child: ListTile(
-                                  title: Text(gusMap.title),
-                                ),
-                              );
-                            }).toList(),
-                          );
+                    return ListView.builder(
+                      itemCount: snapshot.data?.length,
+                      itemBuilder: (context, index) {
+                        return GusListItem(
+                          gusMap: snapshot.data![index],
+                        );
+                      },
+                    );
                   }),
             ),
           ],
         ),
       ),
       bottomNavigationBar: Padding(
-        padding: const EdgeInsets.only(bottom: 80, left: 30, right: 30),
+        padding: const EdgeInsets.only(bottom: 80, left: 40, right: 40),
         child: GusButton(
           buttonTextGus: AppLocalizations.of(context)!.button5,
           onTap: () => goToChoose(context),

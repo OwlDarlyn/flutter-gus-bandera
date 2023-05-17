@@ -73,9 +73,11 @@ flutter:
     - assets/images/bunker_gus.svg
     - assets/images/bunker_invisible.svg
     - assets/images/bunker_visible.svg
+    - assets/images/bunker_small.svg
     - assets/images/chrik_gus.svg
     - assets/images/chrik_invisible.svg
     - assets/images/chrik_visible.svg
+    - assets/images/chrik_small.svg
     - assets/images/en_flag_1.svg
     - assets/images/gus_active_eng.svg
     - assets/images/gus_active_ukr.svg
@@ -85,9 +87,11 @@ flutter:
     - assets/images/mackwa_gus.svg
     - assets/images/mackwa_invisible.svg
     - assets/images/mackwa_visible.svg
+    - assets/images/mackwa_small.svg
     - assets/images/rubl_gus.svg
     - assets/images/rubl_invisible.svg
     - assets/images/rubl_visible.svg
+    - assets/images/rubl_small.svg
     - assets/images/uk_flag_1.svg
 
   # An image asset can refer to one or more resolution-specific "variants", see

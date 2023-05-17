@@ -25,7 +25,8 @@ class DatabaseHelper {
     await db.execute('''
       CREATE TABLE gus_map(
           id INTEGER PRIMARY KEY,
-          title TEXT
+          date TEXT,
+          itemId TEXT
       )
       ''');
   }

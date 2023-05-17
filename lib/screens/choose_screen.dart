@@ -30,17 +30,17 @@ class _ChooseScreenState extends State<ChooseScreen> {
     });
   }
 
-  void goToSlava(BuildContext context, String id) {
-    Navigator.push(
-        context,
-        MaterialPageRoute(
-            builder: (context) => SlavaUkraineScreen(actionId: id)));
-  }
-
   bool selectedGus = false;
 
   @override
   Widget build(BuildContext context) {
+    void goToSlava(String id) {
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => SlavaUkraineScreen(actionId: id)));
+    }
+
     final String selectedId =
         Provider.of<ChooseLocation>(context, listen: true).choosenId;
     return Stack(children: [
@@ -143,8 +143,9 @@ class _ChooseScreenState extends State<ChooseScreen> {
         left: 15,
         duration: const Duration(milliseconds: 1200),
         onEnd: () async {
-          await DatabaseHelper.instance.add(GusMap(id: 1, title: 'hello'));
-          goToSlava(context, selectedId);
+          await DatabaseHelper.instance
+              .add(GusMap(date: DateTime.now().toString(), itemId: selectedId));
+          goToSlava(selectedId);
         },
         child: Transform.scale(
             scale: 1, child: SvgPicture.asset('assets/images/gus_fly.svg')),
