@@ -1,6 +1,6 @@
 # flutter_gus_bandera
 
-A new Flutter project. Design of a mobile application for launching a banderogus.
+A new Flutter project. A mobile application for launching a banderogus.
 
 The design was taken from the [GoIT UI/UX marathon.](https://uxuidesign.m.goit.global/ua/start/) 
 All rights to the design belong to the GoIT.
